@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rainorshine/static/css/main.f4aa1536.chunk.css",
+    "main.js": "/rainorshine/static/js/main.7cdb0e9a.chunk.js",
+    "main.js.map": "/rainorshine/static/js/main.7cdb0e9a.chunk.js.map",
+    "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
+    "runtime-main.js.map": "/rainorshine/static/js/runtime-main.9410802d.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/rainorshine/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.ab2a144b.chunk.js": "/rainorshine/static/js/2.ab2a144b.chunk.js",
+    "static/js/2.ab2a144b.chunk.js.map": "/rainorshine/static/js/2.ab2a144b.chunk.js.map",
+    "index.html": "/rainorshine/index.html",
+    "precache-manifest.c4dc364797bbeef32610811c4e516ac8.js": "/rainorshine/precache-manifest.c4dc364797bbeef32610811c4e516ac8.js",
+    "service-worker.js": "/rainorshine/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.f4aa1536.chunk.css.map": "/rainorshine/static/css/main.f4aa1536.chunk.css.map",
+    "static/js/2.ab2a144b.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.ab2a144b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9410802d.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.ab2a144b.chunk.js",
+    "static/css/main.f4aa1536.chunk.css",
+    "static/js/main.7cdb0e9a.chunk.js"
+  ]
+}
