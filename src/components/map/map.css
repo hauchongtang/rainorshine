@@ -16,6 +16,10 @@ p#timestamp {
   margin-bottom: 2%;
 }
 
+p#time {
+  font-style: italic;
+}
+
 p.card-text {
   float: none;
 }

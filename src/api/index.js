@@ -18,7 +18,11 @@ export const fetch24Data = async () => {
   try {
     const url = 'https://api.data.gov.sg/v1/environment/24-hour-weather-forecast';
     const response = await axios.get(url);
-    return (response.data.items[0].periods.map(item => item.regions));
+    const modifiedData = {
+      regions: response.data.items[0].periods.map(item => item.regions),
+      time: response.data.items[0].periods.map(item => item.time)
+    }
+    return modifiedData;
   } catch (error) {
     console.log(error);
   }

@@ -11,6 +11,7 @@ const Maps = () => {
   const [infoData, setInfo] = useState([]);
   const [valid, setValid] = useState([]);
   const [datatwfour, set24Data] = useState([]);
+  const [datatwfourtime, set24Time] = useState([]);
   const [current, setPosition] = useState([1.3521, 103.8198]);
   const [curr, setPos] = useState({});
   const [location, setLocation] = useState(false);
@@ -24,7 +25,9 @@ const Maps = () => {
       const fetchedData = await fetchData();
       const fetched24 = await fetch24Data();
       const { area, info } = fetchedData;
-      set24Data(fetched24);
+      const { regions, time } = fetched24;
+      set24Data(regions);
+      set24Time(time);
       setArea(area);
       setInfo(info.forecasts);
       setValid(info.valid_period);
@@ -37,6 +40,15 @@ const Maps = () => {
   const n = datatwfour.map(item => item.north);
   const s = datatwfour.map(item => item.south);
   const c = datatwfour.map(item => item.central);
+
+  const startTime = datatwfourtime.map(item => item.start);
+  const endTime = datatwfourtime.map(item => item.end);
+  const oneStart = new Date(startTime[0]).toLocaleTimeString();
+  const oneEnd = new Date(endTime[0]).toLocaleTimeString();
+  const twoStart = new Date(startTime[1]).toLocaleTimeString();
+  const twoEnd = new Date(endTime[1]).toLocaleTimeString();
+  const threeStart = new Date(startTime[2]).toLocaleTimeString();
+  const threeEnd = new Date(endTime[2]).toLocaleTimeString();
 
   areaData.map((item, index) => item.weather = infoData[index]);
 
@@ -128,26 +140,40 @@ const Maps = () => {
       <Card>
         <CardBody>
           <h3>North</h3>
-
-          <p>Afternoon(12pm to 6pm):&nbsp;{n[0]}</p>
-          <p>Night(6pm to 6am):&nbsp;{n[1]}</p>
-          <p>Morning(6am to 12 noon):&nbsp;{n[2]}</p>
+          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
+          <h6>{n[0]}</h6>
+          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
+          <h6>{n[1]}</h6>
+          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
+          <h6>{n[2]}</h6>
           <h3>South</h3>
-          <p>Afternoon(12pm to 6pm):&nbsp;{s[0]}</p>
-          <p>Night(6pm to 6am):&nbsp;{s[1]}</p>
-          <p>Morning(6am to 12 noon):&nbsp;{s[2]}</p>
+          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
+          <h6>{s[0]}</h6>
+          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
+          <h6>{s[1]}</h6>
+          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
+          <h6>{s[2]}</h6>
           <h3>East</h3>
-          <p>Afternoon(12pm to 6pm):&nbsp;{e[0]}</p>
-          <p>Night(6pm to 6am):&nbsp;{e[1]}</p>
-          <p>Morning(6am to 12 noon):&nbsp;{e[2]}</p>
+          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
+          <h6>{e[0]}</h6>
+          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
+          <h6>{e[1]}</h6>
+          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
+          <h6>{e[2]}</h6>
           <h3>West</h3>
-          <p>Afternoon(12pm to 6pm):&nbsp;{w[0]}</p>
-          <p>Night(6pm to 6am):&nbsp;{w[1]}</p>
-          <p>Morning(6am to 12 noon):&nbsp;{w[2]}</p>
+          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
+          <h6>{w[0]}</h6>
+          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
+          <h6>{w[1]}</h6>
+          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
+          <h6>{w[2]}</h6>
           <h3>Central</h3>
-          <p>Afternoon(12pm to 6pm):&nbsp;{c[0]}</p>
-          <p>Night(6pm to 6am):&nbsp;{c[1]}</p>
-          <p>Morning(6am to 12 noon):&nbsp;{c[2]}</p>
+          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
+          <h6>{c[0]}</h6>
+          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
+          <h6>{c[1]}</h6>
+          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
+          <h6>{c[2]}</h6>
         </CardBody>
       </Card>
       <h5></h5>
