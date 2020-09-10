@@ -71,9 +71,9 @@ const Maps = () => {
       <div>
         <Card>
           <CardBody>
-            <h3>{number ? areaArr[number] : null}</h3>
+            <h3>{areaArr[number]}</h3>
             <p id='timestamp'>{new Date(valid.start).toLocaleTimeString()}&nbsp;to&nbsp;{new Date(valid.end).toLocaleTimeString()}</p>
-            <CardText>{number ? forecastArr[number] : 'Please allow location service'}</CardText>
+            <h6>{forecastArr[number]}</h6>
           </CardBody>
         </Card>
       </div>
