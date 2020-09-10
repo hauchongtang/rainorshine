@@ -122,6 +122,8 @@ const Maps = () => {
           <p>- If you enable location, you can see your nearest weather station.</p>
           <h3>Source</h3>
           - <a href='https://data.gov.sg/'>data.gov.sg</a>
+          <h3>Code</h3>
+          - <a href='https://github.com/hauchongtang/rainorshine'>GitHub</a>
         </CardBody>
       </Card>
     </>
