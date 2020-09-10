@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Popup, TileLayer, CircleMarker, Marker } from 'react-leaflet';
-import { Card, CardBody, CardTitle, CardText, Navbar, NavbarBrand } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 
-import { fetchData } from '../../api/index';
+import { fetchData, fetch24Data } from '../../api/index';
 
 import './map.css';
 
@@ -10,6 +10,7 @@ const Maps = () => {
   const [areaData, setArea] = useState([]);
   const [infoData, setInfo] = useState([]);
   const [valid, setValid] = useState([]);
+  const [datatwfour, set24Data] = useState([]);
   const [current, setPosition] = useState([1.3521, 103.8198]);
   const [curr, setPos] = useState({});
   const [location, setLocation] = useState(false);
@@ -21,13 +22,21 @@ const Maps = () => {
     })
     const fetchAPI = async () => {
       const fetchedData = await fetchData();
+      const fetched24 = await fetch24Data();
       const { area, info } = fetchedData;
+      set24Data(fetched24);
       setArea(area);
       setInfo(info.forecasts);
       setValid(info.valid_period);
     }
     fetchAPI();
   }, []);
+
+  const w = datatwfour.map(item => item.west);
+  const e = datatwfour.map(item => item.east);
+  const n = datatwfour.map(item => item.north);
+  const s = datatwfour.map(item => item.south);
+  const c = datatwfour.map(item => item.central);
 
   areaData.map((item, index) => item.weather = infoData[index]);
 
@@ -47,13 +56,13 @@ const Maps = () => {
     return d;
   }
 
-  const nearestPoint = (latitude, longitude) => {
+  const nearestPoint = (latitude, longitude, array) => {
     var minDif = 99999;
     var closest;
-    for (let i = 0; i < areaData.length; ++i) {
+    for (let i = 0; i < array.length; ++i) {
       var dif = pythagorasEquiRectangular(latitude, longitude,
-        areaData.map((item) => item.label_location.latitude)[i],
-        areaData.map(item => item.label_location.longitude)[i]);
+        array.map((item) => item.label_location.latitude)[i],
+        array.map(item => item.label_location.longitude)[i]);
       if (dif < minDif) {
         closest = i;
         minDif = dif;
@@ -62,7 +71,7 @@ const Maps = () => {
     return closest;
   }
 
-  const number = nearestPoint(curr.lat, curr.long);
+  const number = nearestPoint(curr.lat, curr.long, areaData);
   const areaArr = infoData.map(item => item.area)
   const forecastArr = infoData.map(item => item.forecast)
   return (
@@ -108,12 +117,39 @@ const Maps = () => {
               position={[location.label_location.latitude, location.label_location.longitude]}
               onClose={() => setLocation(false)}
             >
-              <h1>{location.name}</h1>
+              <h4>{location.name}</h4>
               <p>{location.weather.forecast}</p>
             </Popup>
           )
         }
       </Map>
+      <h5></h5>
+      <h4 id='weather'>24 Hour Forecast</h4>
+      <Card>
+        <CardBody>
+          <h3>North</h3>
+
+          <p>Afternoon(12pm to 6pm):&nbsp;{n[0]}</p>
+          <p>Night(6pm to 6am):&nbsp;{n[1]}</p>
+          <p>Morning(6am to 12 noon):&nbsp;{n[2]}</p>
+          <h3>South</h3>
+          <p>Afternoon(12pm to 6pm):&nbsp;{s[0]}</p>
+          <p>Night(6pm to 6am):&nbsp;{s[1]}</p>
+          <p>Morning(6am to 12 noon):&nbsp;{s[2]}</p>
+          <h3>East</h3>
+          <p>Afternoon(12pm to 6pm):&nbsp;{e[0]}</p>
+          <p>Night(6pm to 6am):&nbsp;{e[1]}</p>
+          <p>Morning(6am to 12 noon):&nbsp;{e[2]}</p>
+          <h3>West</h3>
+          <p>Afternoon(12pm to 6pm):&nbsp;{w[0]}</p>
+          <p>Night(6pm to 6am):&nbsp;{w[1]}</p>
+          <p>Morning(6am to 12 noon):&nbsp;{w[2]}</p>
+          <h3>Central</h3>
+          <p>Afternoon(12pm to 6pm):&nbsp;{c[0]}</p>
+          <p>Night(6pm to 6am):&nbsp;{c[1]}</p>
+          <p>Morning(6am to 12 noon):&nbsp;{c[2]}</p>
+        </CardBody>
+      </Card>
       <h5></h5>
       <Card>
         <CardBody>
