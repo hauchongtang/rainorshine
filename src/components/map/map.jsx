@@ -92,6 +92,7 @@ const Maps = () => {
       <div>
         <Card>
           <CardBody>
+            <h4>Current Location:</h4>
             <h3>{areaArr[number]}</h3>
             <p id='timestamp'>{new Date(valid.start).toLocaleTimeString()}&nbsp;to&nbsp;{new Date(valid.end).toLocaleTimeString()}</p>
             <h6>{forecastArr[number]}</h6>
