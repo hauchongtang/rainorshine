@@ -138,7 +138,7 @@ const Maps = () => {
       <h5></h5>
 
       <Card>
-        <CardBody>
+        <CardBody id='card0'>
           <h4 id='weather'>24 Hour Forecast</h4>
           <Table borderless>
             <thead>
