@@ -29,5 +29,6 @@ body {
 }
 
 h4#weather {
-  text-align: center;
+  text-align: left;
+  padding-left: 1%;
 }
