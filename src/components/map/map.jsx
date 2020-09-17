@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Popup, TileLayer, CircleMarker, Marker } from 'react-leaflet';
-import { Card, CardBody } from 'reactstrap';
+import { Card, CardBody, Table } from 'reactstrap';
 
 import { fetchData, fetch24Data } from '../../api/index';
 
@@ -88,7 +88,6 @@ const Maps = () => {
   const forecastArr = infoData.map(item => item.forecast)
   return (
     <>
-      <h4 id='weather'>2 Hourly Forecast</h4>
       <div>
         <Card>
           <CardBody>
@@ -137,44 +136,52 @@ const Maps = () => {
         }
       </Map>
       <h5></h5>
-      <h4 id='weather'>24 Hour Forecast</h4>
+
       <Card>
         <CardBody>
-          <h3>North</h3>
-          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
-          <h6>{n[0]}</h6>
-          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
-          <h6>{n[1]}</h6>
-          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
-          <h6>{n[2]}</h6>
-          <h3>South</h3>
-          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
-          <h6>{s[0]}</h6>
-          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
-          <h6>{s[1]}</h6>
-          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
-          <h6>{s[2]}</h6>
-          <h3>East</h3>
-          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
-          <h6>{e[0]}</h6>
-          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
-          <h6>{e[1]}</h6>
-          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
-          <h6>{e[2]}</h6>
-          <h3>West</h3>
-          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
-          <h6>{w[0]}</h6>
-          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
-          <h6>{w[1]}</h6>
-          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
-          <h6>{w[2]}</h6>
-          <h3>Central</h3>
-          <p id='time'>{oneStart}&nbsp;to&nbsp;{oneEnd}&nbsp;:&nbsp;</p>
-          <h6>{c[0]}</h6>
-          <p id='time'>{twoStart}&nbsp;to&nbsp;{twoEnd}&nbsp;:&nbsp;</p>
-          <h6>{c[1]}</h6>
-          <p id='time'>{threeStart}&nbsp;to&nbsp;{threeEnd}&nbsp;:&nbsp;</p>
-          <h6>{c[2]}</h6>
+          <h4 id='weather'>24 Hour Forecast</h4>
+          <Table borderless>
+            <thead>
+              <tr>
+                <th></th>
+                <th>{oneStart}&nbsp;to&nbsp;{oneEnd}</th>
+                <th>{twoStart}&nbsp;to&nbsp;{twoEnd}</th>
+                <th>{threeStart}&nbsp;to&nbsp;{threeEnd}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">North</th>
+                <td>{n[0]}</td>
+                <td>{n[1]}</td>
+                <td>{n[2]}</td>
+              </tr>
+              <tr>
+                <th scope="row">South</th>
+                <td>{s[0]}</td>
+                <td>{s[1]}</td>
+                <td>{s[2]}</td>
+              </tr>
+              <tr>
+                <th scope="row">East</th>
+                <td>{e[0]}</td>
+                <td>{e[1]}</td>
+                <td>{e[2]}</td>
+              </tr>
+              <tr>
+                <th scope="row">West</th>
+                <td>{w[0]}</td>
+                <td>{w[1]}</td>
+                <td>{w[2]}</td>
+              </tr>
+              <tr>
+                <th scope="row">Central</th>
+                <td>{c[0]}</td>
+                <td>{c[1]}</td>
+                <td>{c[2]}</td>
+              </tr>
+            </tbody>
+          </Table>
         </CardBody>
       </Card>
       <h5></h5>
@@ -182,7 +189,7 @@ const Maps = () => {
         <CardBody>
           <h3>Features</h3>
           <p>- Quick check of the weather before heading out for outdoor activities.</p>
-          <p>- If you enable location, you can see your nearest weather station.</p>
+          <p>- If you enable location, you will be auto directed to your nearest weather station.</p>
           <h3>Source</h3>
           - <a href='https://data.gov.sg/'>data.gov.sg</a>
           <h3>Code</h3>
