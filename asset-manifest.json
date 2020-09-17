@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/rainorshine/static/css/main.a7cd1683.chunk.css",
+    "main.css": "/rainorshine/static/css/main.6948fad1.chunk.css",
     "main.js": "/rainorshine/static/js/main.b89151d0.chunk.js",
     "main.js.map": "/rainorshine/static/js/main.b89151d0.chunk.js.map",
     "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
@@ -9,17 +9,17 @@
     "static/js/2.91ee004f.chunk.js": "/rainorshine/static/js/2.91ee004f.chunk.js",
     "static/js/2.91ee004f.chunk.js.map": "/rainorshine/static/js/2.91ee004f.chunk.js.map",
     "index.html": "/rainorshine/index.html",
-    "precache-manifest.583749a675f2b79d86c39c73829fa40f.js": "/rainorshine/precache-manifest.583749a675f2b79d86c39c73829fa40f.js",
+    "precache-manifest.fea583a4bc76fff021945a489971100f.js": "/rainorshine/precache-manifest.fea583a4bc76fff021945a489971100f.js",
     "service-worker.js": "/rainorshine/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.a7cd1683.chunk.css.map": "/rainorshine/static/css/main.a7cd1683.chunk.css.map",
+    "static/css/main.6948fad1.chunk.css.map": "/rainorshine/static/css/main.6948fad1.chunk.css.map",
     "static/js/2.91ee004f.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.91ee004f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9410802d.js",
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.91ee004f.chunk.js",
-    "static/css/main.a7cd1683.chunk.css",
+    "static/css/main.6948fad1.chunk.css",
     "static/js/main.b89151d0.chunk.js"
   ]
 }
