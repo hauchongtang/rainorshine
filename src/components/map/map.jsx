@@ -35,6 +35,12 @@ const Maps = () => {
     fetchAPI();
   }, []);
 
+  const options = {
+    timeZone: "Asia/Singapore",
+    hour12: true,
+    hour: "numeric",
+  }
+
   const w = datatwfour.map(item => item.west);
   const e = datatwfour.map(item => item.east);
   const n = datatwfour.map(item => item.north);
@@ -43,12 +49,12 @@ const Maps = () => {
 
   const startTime = datatwfourtime.map(item => item.start);
   const endTime = datatwfourtime.map(item => item.end);
-  const oneStart = new Date(startTime[0]).toLocaleTimeString();
-  const oneEnd = new Date(endTime[0]).toLocaleTimeString();
-  const twoStart = new Date(startTime[1]).toLocaleTimeString();
-  const twoEnd = new Date(endTime[1]).toLocaleTimeString();
-  const threeStart = new Date(startTime[2]).toLocaleTimeString();
-  const threeEnd = new Date(endTime[2]).toLocaleTimeString();
+  const oneStart = new Date(startTime[0]).toLocaleTimeString("en-US", options);
+  const oneEnd = new Date(endTime[0]).toLocaleTimeString("en-US", options);
+  const twoStart = new Date(startTime[1]).toLocaleTimeString("en-US", options);
+  const twoEnd = new Date(endTime[1]).toLocaleTimeString("en-US", options);
+  const threeStart = new Date(startTime[2]).toLocaleTimeString("en-US", options);
+  const threeEnd = new Date(endTime[2]).toLocaleTimeString("en-US", options);
 
   areaData.map((item, index) => item.weather = infoData[index]);
 
@@ -93,7 +99,7 @@ const Maps = () => {
           <CardBody>
             <h5>Current Location:</h5>
             <h3>{areaArr[number]}</h3>
-            <p id='timestamp'>{new Date(valid.start).toLocaleTimeString()}&nbsp;to&nbsp;{new Date(valid.end).toLocaleTimeString()}</p>
+            <p id='timestamp'>{new Date(valid.start).toLocaleTimeString("en-US", options)}&nbsp;to&nbsp;{new Date(valid.end).toLocaleTimeString("en-US", options)}</p>
             <h6>{forecastArr[number]}</h6>
           </CardBody>
         </Card>
