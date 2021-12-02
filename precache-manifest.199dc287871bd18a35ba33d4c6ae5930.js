@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a380860248a1905c6c1ef9bc9b76d277",
+    "revision": "7878391ea45e65f49e52ff857106f9f7",
     "url": "/rainorshine/index.html"
   },
   {
-    "revision": "dd2a4e732b5f206858d6",
+    "revision": "fbf7663aeadf3f441272",
     "url": "/rainorshine/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "a7066705dda3ad713238",
+    "revision": "f83220266056f3d5968e",
     "url": "/rainorshine/static/css/main.21d4b341.chunk.css"
   },
   {
-    "revision": "dd2a4e732b5f206858d6",
-    "url": "/rainorshine/static/js/2.713dc848.chunk.js"
+    "revision": "fbf7663aeadf3f441272",
+    "url": "/rainorshine/static/js/2.4442a68a.chunk.js"
   },
   {
     "revision": "17dffa516c2ca25cecdb67ecbc5e1c6e",
-    "url": "/rainorshine/static/js/2.713dc848.chunk.js.LICENSE.txt"
+    "url": "/rainorshine/static/js/2.4442a68a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a7066705dda3ad713238",
-    "url": "/rainorshine/static/js/main.f59cf179.chunk.js"
+    "revision": "f83220266056f3d5968e",
+    "url": "/rainorshine/static/js/main.29a8c5e3.chunk.js"
   },
   {
     "revision": "ad036da2879367e7e995",

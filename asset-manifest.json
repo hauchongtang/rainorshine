@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/rainorshine/static/css/main.21d4b341.chunk.css",
-    "main.js": "/rainorshine/static/js/main.f59cf179.chunk.js",
-    "main.js.map": "/rainorshine/static/js/main.f59cf179.chunk.js.map",
+    "main.js": "/rainorshine/static/js/main.29a8c5e3.chunk.js",
+    "main.js.map": "/rainorshine/static/js/main.29a8c5e3.chunk.js.map",
     "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
     "runtime-main.js.map": "/rainorshine/static/js/runtime-main.9410802d.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/rainorshine/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.713dc848.chunk.js": "/rainorshine/static/js/2.713dc848.chunk.js",
-    "static/js/2.713dc848.chunk.js.map": "/rainorshine/static/js/2.713dc848.chunk.js.map",
+    "static/js/2.4442a68a.chunk.js": "/rainorshine/static/js/2.4442a68a.chunk.js",
+    "static/js/2.4442a68a.chunk.js.map": "/rainorshine/static/js/2.4442a68a.chunk.js.map",
     "index.html": "/rainorshine/index.html",
-    "precache-manifest.84678c6018e7565522874eb83df182dd.js": "/rainorshine/precache-manifest.84678c6018e7565522874eb83df182dd.js",
+    "precache-manifest.199dc287871bd18a35ba33d4c6ae5930.js": "/rainorshine/precache-manifest.199dc287871bd18a35ba33d4c6ae5930.js",
     "service-worker.js": "/rainorshine/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.21d4b341.chunk.css.map": "/rainorshine/static/css/main.21d4b341.chunk.css.map",
-    "static/js/2.713dc848.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.713dc848.chunk.js.LICENSE.txt",
+    "static/js/2.4442a68a.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.4442a68a.chunk.js.LICENSE.txt",
     "static/media/icons8-cloud-lightning.gif": "/rainorshine/static/media/icons8-cloud-lightning.8bd741aa.gif",
     "static/media/icons8-haze.gif": "/rainorshine/static/media/icons8-haze.617009f7.gif",
     "static/media/icons8-light-rain.gif": "/rainorshine/static/media/icons8-light-rain.abedbe2d.gif",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.9410802d.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.713dc848.chunk.js",
+    "static/js/2.4442a68a.chunk.js",
     "static/css/main.21d4b341.chunk.css",
-    "static/js/main.f59cf179.chunk.js"
+    "static/js/main.29a8c5e3.chunk.js"
   ]
 }
