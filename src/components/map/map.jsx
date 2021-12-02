@@ -137,6 +137,12 @@ const Maps = () => {
   const areaArr = infoData.map(item => item.area)
   const forecastArr = infoData.map(item => item.forecast)
 
+  const from = new Date(valid.start).toLocaleTimeString("en-US", options);
+  const to = new Date(valid.end).toLocaleTimeString("en-US", options)
+
+  const hours = new Date().getHours();
+  const isDayTime = hours > 6 && hours < 20;
+
   return (
     <>
       <div id="top-card">
@@ -144,7 +150,7 @@ const Maps = () => {
           <CardBody>
             <h5>Current Location:</h5>
             <h3>{areaArr[number]}</h3>
-            <p id='timestamp'>{new Date(valid.start).toLocaleTimeString("en-US", options)}&nbsp;to&nbsp;{new Date(valid.end).toLocaleTimeString("en-US", options)}</p>
+            <p id='timestamp'>{from}&nbsp;to&nbsp;{to}</p>
             <h6>{forecastArr[number]}</h6>
           </CardBody>
         </Card>
@@ -174,8 +180,7 @@ const Maps = () => {
                   onmouseout={() => setLocation(false)}
                 />
               )
-            } else if (forecastArr[idx] === "Cloudy" ||
-              forecastArr[idx] === "Partly Cloudy (Day)") {
+            } else if (forecastArr[idx] === "Cloudy" && isDayTime) {
               return (
                 <Marker
                   key={item.name}
