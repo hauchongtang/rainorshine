@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rainorshine/static/css/main.1bcf1f8f.chunk.css",
-    "main.js": "/rainorshine/static/js/main.ec24eb7c.chunk.js",
-    "main.js.map": "/rainorshine/static/js/main.ec24eb7c.chunk.js.map",
+    "main.css": "/rainorshine/static/css/main.21d4b341.chunk.css",
+    "main.js": "/rainorshine/static/js/main.c7e8614c.chunk.js",
+    "main.js.map": "/rainorshine/static/js/main.c7e8614c.chunk.js.map",
     "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
     "runtime-main.js.map": "/rainorshine/static/js/runtime-main.9410802d.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/rainorshine/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.e85af556.chunk.js": "/rainorshine/static/js/2.e85af556.chunk.js",
-    "static/js/2.e85af556.chunk.js.map": "/rainorshine/static/js/2.e85af556.chunk.js.map",
+    "static/js/2.713dc848.chunk.js": "/rainorshine/static/js/2.713dc848.chunk.js",
+    "static/js/2.713dc848.chunk.js.map": "/rainorshine/static/js/2.713dc848.chunk.js.map",
     "index.html": "/rainorshine/index.html",
-    "precache-manifest.0320087e21df65808ae8c0b9dc26fae7.js": "/rainorshine/precache-manifest.0320087e21df65808ae8c0b9dc26fae7.js",
+    "precache-manifest.938cef8f1227830872fb31eaad3c736b.js": "/rainorshine/precache-manifest.938cef8f1227830872fb31eaad3c736b.js",
     "service-worker.js": "/rainorshine/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.1bcf1f8f.chunk.css.map": "/rainorshine/static/css/main.1bcf1f8f.chunk.css.map",
-    "static/js/2.e85af556.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.e85af556.chunk.js.LICENSE.txt",
+    "static/css/main.21d4b341.chunk.css.map": "/rainorshine/static/css/main.21d4b341.chunk.css.map",
+    "static/js/2.713dc848.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.713dc848.chunk.js.LICENSE.txt",
     "static/media/icons8-cloud-lightning.gif": "/rainorshine/static/media/icons8-cloud-lightning.8bd741aa.gif",
     "static/media/icons8-haze.gif": "/rainorshine/static/media/icons8-haze.617009f7.gif",
     "static/media/icons8-light-rain.gif": "/rainorshine/static/media/icons8-light-rain.abedbe2d.gif",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.9410802d.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.e85af556.chunk.js",
-    "static/css/main.1bcf1f8f.chunk.css",
-    "static/js/main.ec24eb7c.chunk.js"
+    "static/js/2.713dc848.chunk.js",
+    "static/css/main.21d4b341.chunk.css",
+    "static/js/main.c7e8614c.chunk.js"
   ]
 }
