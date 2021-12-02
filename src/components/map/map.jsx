@@ -1,5 +1,13 @@
+import * as L from 'leaflet';
+import lightrainmarker from '../../assets/icons8-light-rain.gif';
+import cloudymarker from '../../assets/icons8-partly-cloudy-day.gif';
+import nightmarker from '../../assets/night.png';
+import showersmarker from '../../assets/icons8-rainfall.gif';
+import thunderstorm from '../../assets/icons8-cloud-lightning.gif';
+import overcastmarker from '../../assets/icons8-clouds-50.png';
+import hazemarker from '../../assets/icons8-haze.gif';
 import React, { useState, useEffect } from 'react';
-import { Map, Popup, TileLayer, CircleMarker, Marker } from 'react-leaflet';
+import { Map, Popup, TileLayer, Marker } from 'react-leaflet';
 import { Card, CardBody, Table } from 'reactstrap';
 
 import { fetchData, fetch24Data } from '../../api/index';
@@ -40,6 +48,42 @@ const Maps = () => {
     hour12: true,
     hour: "numeric",
   }
+
+  // Icons
+  const lightRainIcon = new L.icon({
+    iconUrl: lightrainmarker,
+    iconSize: [30, 30]
+  });
+
+  const cloudyDayIcon = new L.icon({
+    iconUrl: cloudymarker,
+    iconSize: [30, 30]
+  });
+
+  const night = new L.icon({
+    iconUrl: nightmarker,
+    iconSize: [30, 30]
+  })
+
+  const showers = new L.icon({
+    iconUrl: showersmarker,
+    iconSize: [30, 30]
+  });
+
+  const thunderStorm = new L.icon({
+    iconUrl: thunderstorm,
+    iconSize: [30, 30]
+  });
+
+  const overcast = new L.icon({
+    iconUrl: overcastmarker,
+    iconSize: [30, 30]
+  });
+
+  const haze = new L.icon({
+    iconUrl: hazemarker,
+    iconSize: [30, 30]
+  });
 
   const w = datatwfour.map(item => item.west);
   const e = datatwfour.map(item => item.east);
@@ -92,9 +136,10 @@ const Maps = () => {
   const number = nearestPoint(curr.lat, curr.long, areaData);
   const areaArr = infoData.map(item => item.area)
   const forecastArr = infoData.map(item => item.forecast)
+
   return (
     <>
-      <div>
+      <div id="top-card">
         <Card>
           <CardBody>
             <h5>Current Location:</h5>
@@ -104,7 +149,7 @@ const Maps = () => {
           </CardBody>
         </Card>
       </div>
-      <h5></h5>
+      <div id="map">
       <Map center={current} zoom={12}>
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -114,19 +159,108 @@ const Maps = () => {
           <Marker position={current}></Marker>
         }
         {
-          areaData.map(item => {
-            return (
-              <CircleMarker
-                key={item.name}
-                center={[
-                  item.label_location.latitude,
-                  item.label_location.longitude
-                ]}
-                onClick={() => setLocation(item)}
-                radius={12}
-                color={'purple'}
-              />
-            )
+          areaData.map((item, idx) => {
+            if (forecastArr[idx] === "Light Rain") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={lightRainIcon}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else if (forecastArr[idx] === "Cloudy" ||
+              forecastArr[idx] === "Partly Cloudy (Day)") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={cloudyDayIcon}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else if (forecastArr[idx] === "Showers") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={showers}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else if (forecastArr[idx] === "Thundery Showers") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={thunderStorm}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else if (forecastArr[idx] === "Overcast" ||
+              forecastArr[idx] === "Fair") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={overcast}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else if (forecastArr[idx] === "Hazy") {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={haze}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            } else {
+              return (
+                <Marker
+                  key={item.name}
+                  icon={night}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />
+              )
+            }
           })
         }
         {
@@ -141,8 +275,9 @@ const Maps = () => {
           )
         }
       </Map>
-      <h5></h5>
+      </div>
 
+      <div id='mid-card'>
       <Card>
         <CardBody id='card0'>
           <h4 id='weather'>24 Hour Forecast</h4>
@@ -190,7 +325,9 @@ const Maps = () => {
           </Table>
         </CardBody>
       </Card>
-      <h5></h5>
+      </div>
+
+      <div id='bottom-card'>
       <Card>
         <CardBody>
           <h3>Features</h3>
@@ -202,6 +339,7 @@ const Maps = () => {
           - <a href='https://github.com/hauchongtang/rainorshine'>GitHub</a>
         </CardBody>
       </Card>
+      </div>
     </>
   )
 }
