@@ -8,7 +8,18 @@
   border-radius: 12px !important;
   background-color: #ffbd77;
   background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 37%, #acfcd9 100%);
+}
 
+div#top-card {
+  padding-bottom: 12px;
+}
+
+div#mid-card {
+  padding-top: 12px;
+}
+
+div#bottom-card {
+  padding-top: 12px;
 }
 
 p#timestamp {
@@ -31,8 +42,4 @@ body {
 h4#weather {
   text-align: left;
   padding-left: 1%;
-}
-
-.card-body#card0  {
-  overflow-x: scroll;
 }
