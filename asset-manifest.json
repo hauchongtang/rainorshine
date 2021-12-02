@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/rainorshine/static/css/main.2c9910b3.chunk.css",
+    "main.css": "/rainorshine/static/css/main.1bcf1f8f.chunk.css",
     "main.js": "/rainorshine/static/js/main.e87ee7b4.chunk.js",
     "main.js.map": "/rainorshine/static/js/main.e87ee7b4.chunk.js.map",
     "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
@@ -9,10 +9,10 @@
     "static/js/2.e85af556.chunk.js": "/rainorshine/static/js/2.e85af556.chunk.js",
     "static/js/2.e85af556.chunk.js.map": "/rainorshine/static/js/2.e85af556.chunk.js.map",
     "index.html": "/rainorshine/index.html",
-    "precache-manifest.d40cf33fd1b032195d204b65fd09b460.js": "/rainorshine/precache-manifest.d40cf33fd1b032195d204b65fd09b460.js",
+    "precache-manifest.8dc7ed353defb5b3820ede325d3bccd2.js": "/rainorshine/precache-manifest.8dc7ed353defb5b3820ede325d3bccd2.js",
     "service-worker.js": "/rainorshine/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.2c9910b3.chunk.css.map": "/rainorshine/static/css/main.2c9910b3.chunk.css.map",
+    "static/css/main.1bcf1f8f.chunk.css.map": "/rainorshine/static/css/main.1bcf1f8f.chunk.css.map",
     "static/js/2.e85af556.chunk.js.LICENSE.txt": "/rainorshine/static/js/2.e85af556.chunk.js.LICENSE.txt",
     "static/media/icons8-cloud-lightning.gif": "/rainorshine/static/media/icons8-cloud-lightning.8bd741aa.gif",
     "static/media/icons8-haze.gif": "/rainorshine/static/media/icons8-haze.617009f7.gif",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.9410802d.js",
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.e85af556.chunk.js",
-    "static/css/main.2c9910b3.chunk.css",
+    "static/css/main.1bcf1f8f.chunk.css",
     "static/js/main.e87ee7b4.chunk.js"
   ]
 }
