@@ -158,9 +158,11 @@ const Maps = () => {
       <div id="map">
       <Map center={current} zoom={12}>
         <TileLayer
-          url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
+          url='https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png'
           //url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" 
+          style="height:20px;width:20px;"/> OneMap | Map data &copy; contributors, 
+          <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
         />
         {
           <Marker position={current}></Marker>
