@@ -8,7 +8,6 @@ export const fetchData = async () => {
       area: response.data.area_metadata,
       info: response.data.items[0]
     }
-    console.log(modifiedData)
     return modifiedData;
   } catch (error) {
     console.log(error);
