@@ -4,13 +4,14 @@
   border-radius: 12px;
 }
 
-.card {
+div.card {
   border-radius: 12px !important;
-  background-color: #ffbd77;
-  background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 37%, #acfcd9 100%);
+  color: #351F39;
+  background-color: #726A95;
 }
 
 div#top-card {
+  padding-top: 12px;
   padding-bottom: 12px;
 }
 
@@ -20,6 +21,7 @@ div#mid-card {
 
 div#bottom-card {
   padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 p#timestamp {
@@ -33,10 +35,6 @@ p#time {
 
 p.card-text {
   float: none;
-}
-
-body {
-  background-color: rgb(255, 255, 255) !important;
 }
 
 h4#weather {
