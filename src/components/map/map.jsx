@@ -6,6 +6,8 @@ import showersmarker from '../../assets/icons8-rainfall.gif';
 import thunderstorm from '../../assets/icons8-cloud-lightning.gif';
 import overcastmarker from '../../assets/icons8-clouds-50.png';
 import hazemarker from '../../assets/icons8-haze.gif';
+import smilemarker from '../../assets/icons8-smiling-48.png';
+import windmarker from '../../assets/icons8-wind-47.png';
 import React, { useState, useEffect } from 'react';
 import { Map, Popup, TileLayer, Marker } from 'react-leaflet';
 import { Card, CardBody, Table } from 'reactstrap';
@@ -83,6 +85,16 @@ const Maps = () => {
   const haze = new L.icon({
     iconUrl: hazemarker,
     iconSize: [30, 30]
+  });
+
+  const smilelyface = new L.icon({
+    iconUrl: smilemarker,
+    iconSize: [30,30]
+  });
+
+  const windy = new L.icon({
+    iconUrl: windmarker,
+    iconSize: [30,30]
   });
 
   const w = datatwfour.map(item => item.west);
@@ -165,7 +177,7 @@ const Maps = () => {
           <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
         />
         {
-          <Marker position={current}></Marker>
+          <Marker position={current} icon={smilelyface}></Marker>
         }
         {
           areaData.map((item, idx) => {
@@ -254,6 +266,20 @@ const Maps = () => {
                   onmouseout={() => setLocation(false)}
                 />
               )
+            } else if (forecastArr[idx] === "Windy") {
+              return (
+                 <Marker
+                  key={item.name}
+                  icon={windy}
+                  position={[
+                    item.label_location.latitude,
+                    item.label_location.longitude
+                  ]}
+                  onClick={() => setLocation(item)}
+                  onmouseover={() => setLocation(item)}
+                  onmouseout={() => setLocation(false)}
+                />               
+              );
             } else {
               return (
                 <Marker
