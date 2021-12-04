@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rainorshine/static/css/main.21d4b341.chunk.css",
-    "main.js": "/rainorshine/static/js/main.637a8547.chunk.js",
-    "main.js.map": "/rainorshine/static/js/main.637a8547.chunk.js.map",
+    "main.js": "/rainorshine/static/js/main.c604e716.chunk.js",
+    "main.js.map": "/rainorshine/static/js/main.c604e716.chunk.js.map",
     "runtime-main.js": "/rainorshine/static/js/runtime-main.9410802d.js",
     "runtime-main.js.map": "/rainorshine/static/js/runtime-main.9410802d.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/rainorshine/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.560e3477.chunk.js": "/rainorshine/static/js/2.560e3477.chunk.js",
     "static/js/2.560e3477.chunk.js.map": "/rainorshine/static/js/2.560e3477.chunk.js.map",
     "index.html": "/rainorshine/index.html",
-    "precache-manifest.6a7ae163f8cf2fe9ce1633dc0376fa9d.js": "/rainorshine/precache-manifest.6a7ae163f8cf2fe9ce1633dc0376fa9d.js",
+    "precache-manifest.b10402415aab729043bfc46c6c4eb869.js": "/rainorshine/precache-manifest.b10402415aab729043bfc46c6c4eb869.js",
     "service-worker.js": "/rainorshine/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/rainorshine/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.21d4b341.chunk.css.map": "/rainorshine/static/css/main.21d4b341.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.560e3477.chunk.js",
     "static/css/main.21d4b341.chunk.css",
-    "static/js/main.637a8547.chunk.js"
+    "static/js/main.c604e716.chunk.js"
   ]
 }
