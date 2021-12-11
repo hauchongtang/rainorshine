@@ -209,7 +209,7 @@ const Maps = () => {
                   onmouseout={() => setLocation(false)}
                 />
               )
-            } else if (forecastArr[idx] === "Showers") {
+            } else if (forecastArr[idx] === "Showers" || forecast[idx] === "Heavy Rain") {
               return (
                 <Marker
                   key={item.name}
