@@ -181,7 +181,7 @@ const Maps = () => {
         }
         {
           areaData.map((item, idx) => {
-            if (forecastArr[idx] === "Light Rain") {
+            if (forecastArr[idx] === "Light Rain" || forecastArr[idx] === "Moderate Rain") {
               return (
                 <Marker
                   key={item.name}
@@ -209,7 +209,7 @@ const Maps = () => {
                   onmouseout={() => setLocation(false)}
                 />
               )
-            } else if (forecastArr[idx] === "Showers" || forecast[idx] === "Heavy Rain") {
+            } else if (forecastArr[idx] === "Showers" || forecastArr[idx] === "Heavy Rain") {
               return (
                 <Marker
                   key={item.name}
