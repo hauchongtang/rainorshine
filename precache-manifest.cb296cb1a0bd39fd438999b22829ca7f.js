@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "363eb606f39c02a7def8488c05e3b8a1",
+    "revision": "fc054bccc8e450b9133cf205093139e7",
     "url": "/rainorshine/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rainorshine/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "d6662ea3d93dc92983d7",
+    "revision": "014b6d54cd0c79540513",
     "url": "/rainorshine/static/css/main.21d4b341.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rainorshine/static/js/2.560e3477.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6662ea3d93dc92983d7",
-    "url": "/rainorshine/static/js/main.2be97883.chunk.js"
+    "revision": "014b6d54cd0c79540513",
+    "url": "/rainorshine/static/js/main.0ec48275.chunk.js"
   },
   {
     "revision": "ad036da2879367e7e995",
