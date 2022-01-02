@@ -89,12 +89,12 @@ const Maps = () => {
 
   const smilelyface = new L.icon({
     iconUrl: smilemarker,
-    iconSize: [30,30]
+    iconSize: [30, 30]
   });
 
   const windy = new L.icon({
     iconUrl: windmarker,
-    iconSize: [30,30]
+    iconSize: [30, 30]
   });
 
   const w = datatwfour.map(item => item.west);
@@ -145,237 +145,251 @@ const Maps = () => {
     return closest;
   }
 
-  const number = nearestPoint(curr.lat, curr.long, areaData);
-  const areaArr = infoData.map(item => item.area)
-  const forecastArr = infoData.map(item => item.forecast)
+  try {
+    const number = nearestPoint(curr.lat, curr.long, areaData);
+    const areaArr = infoData.map(item => item.area)
+    const forecastArr = infoData.map(item => item.forecast)
 
-  const from = new Date(valid.start).toLocaleTimeString("en-US", options);
-  const to = new Date(valid.end).toLocaleTimeString("en-US", options)
+    const from = new Date(valid.start).toLocaleTimeString("en-US", options);
+    const to = new Date(valid.end).toLocaleTimeString("en-US", options)
 
-  const hours = new Date().getHours();
-  const isDayTime = hours > 6 && hours < 20;
+    const hours = new Date().getHours();
+    const isDayTime = hours > 6 && hours < 20;
 
-  return (
-    <>
-      <div id="top-card">
-        <Card>
-          <CardBody>
-            <h5>Current Location:</h5>
-            <h3>{areaArr[number]}</h3>
-            <p id='timestamp'>{from}&nbsp;to&nbsp;{to}</p>
-            <h6>{forecastArr[number]}</h6>
-          </CardBody>
-        </Card>
-      </div>
-      <div id="map">
-      <Map center={current} zoom={12}>
-        <TileLayer
-          url='https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png'
-          //url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          attribution='<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" 
+    return (
+      <>
+        <div id="top-card">
+          <Card>
+            <CardBody>
+              <h5>Current Location:</h5>
+              <h3>{areaArr[number]}</h3>
+              <p id='timestamp'>{from}&nbsp;to&nbsp;{to}</p>
+              <h6>{forecastArr[number]}</h6>
+            </CardBody>
+          </Card>
+        </div>
+        <div id="map">
+          <Map center={current} zoom={12}>
+            <TileLayer
+              url='https://maps-{s}.onemap.sg/v3/Night/{z}/{x}/{y}.png'
+              //url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+              attribution='<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" 
           style="height:20px;width:20px;"/> OneMap | Map data &copy; contributors, 
           <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-        />
-        {
-          <Marker position={current} icon={smilelyface}></Marker>
-        }
-        {
-          areaData.map((item, idx) => {
-            if (forecastArr[idx] === "Light Rain" || forecastArr[idx] === "Moderate Rain") {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={lightRainIcon}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Cloudy" && isDayTime) {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={cloudyDayIcon}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Showers" || forecastArr[idx] === "Heavy Rain") {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={showers}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Thundery Showers") {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={thunderStorm}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Overcast" ||
-              forecastArr[idx] === "Fair") {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={overcast}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Hazy") {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={haze}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
-              )
-            } else if (forecastArr[idx] === "Windy") {
-              return (
-                 <Marker
-                  key={item.name}
-                  icon={windy}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />               
-              );
-            } else {
-              return (
-                <Marker
-                  key={item.name}
-                  icon={night}
-                  position={[
-                    item.label_location.latitude,
-                    item.label_location.longitude
-                  ]}
-                  onClick={() => setLocation(item)}
-                  onmouseover={() => setLocation(item)}
-                  onmouseout={() => setLocation(false)}
-                />
+            />
+            {
+              <Marker position={current} icon={smilelyface}></Marker>
+            }
+            {
+              areaData.map((item, idx) => {
+                if (forecastArr[idx] === "Light Rain" || forecastArr[idx] === "Moderate Rain"
+                  || forecastArr[idx] === "Passing Showers") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={lightRainIcon}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if ((forecastArr[idx] === "Cloudy" && isDayTime)
+                  || forecastArr[idx] === "Partly Cloudy (Day)") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={cloudyDayIcon}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if (forecastArr[idx] === "Showers" || forecastArr[idx] === "Heavy Rain"
+                ) {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={showers}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if (forecastArr[idx] === "Thundery Showers") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={thunderStorm}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if (forecastArr[idx] === "Overcast" ||
+                  forecastArr[idx] === "Fair") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={overcast}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if (forecastArr[idx] === "Hazy") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={haze}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                } else if (forecastArr[idx] === "Windy") {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={windy}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  );
+                } else {
+                  return (
+                    <Marker
+                      key={item.name}
+                      icon={night}
+                      position={[
+                        item.label_location.latitude,
+                        item.label_location.longitude
+                      ]}
+                      onClick={() => setLocation(item)}
+                      onmouseover={() => setLocation(item)}
+                      onmouseout={() => setLocation(false)}
+                    />
+                  )
+                }
+              })
+            }
+            {
+              location && (
+                <Popup
+                  position={[location.label_location.latitude, location.label_location.longitude]}
+                  onClose={() => setLocation(false)}
+                >
+                  <h4>{location.name}</h4>
+                  <p>{location.weather.forecast}</p>
+                </Popup>
               )
             }
-          })
-        }
-        {
-          location && (
-            <Popup
-              position={[location.label_location.latitude, location.label_location.longitude]}
-              onClose={() => setLocation(false)}
-            >
-              <h4>{location.name}</h4>
-              <p>{location.weather.forecast}</p>
-            </Popup>
-          )
-        }
-      </Map>
-      </div>
+          </Map>
+        </div>
 
-      <div id='mid-card'>
-      <Card>
-        <CardBody id='card0'>
-          <h4 id='weather'>24 Hour Forecast</h4>
-          <Table borderless>
-            <thead>
-              <tr>
-                <th></th>
-                <th>{oneStart}&nbsp;to&nbsp;{oneEnd}</th>
-                <th>{twoStart}&nbsp;to&nbsp;{twoEnd}</th>
-                <th>{threeStart}&nbsp;to&nbsp;{threeEnd}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">North</th>
-                <td>{n[0]}</td>
-                <td>{n[1]}</td>
-                <td>{n[2]}</td>
-              </tr>
-              <tr>
-                <th scope="row">South</th>
-                <td>{s[0]}</td>
-                <td>{s[1]}</td>
-                <td>{s[2]}</td>
-              </tr>
-              <tr>
-                <th scope="row">East</th>
-                <td>{e[0]}</td>
-                <td>{e[1]}</td>
-                <td>{e[2]}</td>
-              </tr>
-              <tr>
-                <th scope="row">West</th>
-                <td>{w[0]}</td>
-                <td>{w[1]}</td>
-                <td>{w[2]}</td>
-              </tr>
-              <tr>
-                <th scope="row">Central</th>
-                <td>{c[0]}</td>
-                <td>{c[1]}</td>
-                <td>{c[2]}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </CardBody>
-      </Card>
-      </div>
+        <div id='mid-card'>
+          <Card>
+            <CardBody id='card0'>
+              <h4 id='weather'>24 Hour Forecast</h4>
+              <Table borderless>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>{oneStart}&nbsp;to&nbsp;{oneEnd}</th>
+                    <th>{twoStart}&nbsp;to&nbsp;{twoEnd}</th>
+                    <th>{threeStart}&nbsp;to&nbsp;{threeEnd}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">North</th>
+                    <td>{n[0]}</td>
+                    <td>{n[1]}</td>
+                    <td>{n[2]}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">South</th>
+                    <td>{s[0]}</td>
+                    <td>{s[1]}</td>
+                    <td>{s[2]}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">East</th>
+                    <td>{e[0]}</td>
+                    <td>{e[1]}</td>
+                    <td>{e[2]}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">West</th>
+                    <td>{w[0]}</td>
+                    <td>{w[1]}</td>
+                    <td>{w[2]}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Central</th>
+                    <td>{c[0]}</td>
+                    <td>{c[1]}</td>
+                    <td>{c[2]}</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </CardBody>
+          </Card>
+        </div>
 
-      <div id='bottom-card'>
-      <Card>
-        <CardBody>
-          <h3>Features</h3>
-          <p>- Quick check of the weather before heading out for outdoor activities.</p>
-          <p>- If you enable location, you will be auto directed to your nearest weather station.</p>
-          <h3>Source</h3>
-          - <a href='https://data.gov.sg/'>data.gov.sg</a>
-          <h3>Code</h3>
-          - <a href='https://github.com/hauchongtang/rainorshine'>GitHub</a>
-        </CardBody>
-      </Card>
-      </div>
-    </>
-  )
+        <div id='bottom-card'>
+          <Card>
+            <CardBody>
+              <h3>Features</h3>
+              <p>- Quick check of the weather before heading out for outdoor activities.</p>
+              <p>- If you enable location, you will be auto directed to your nearest weather station.</p>
+              <h3>Source</h3>
+              - <a href='https://data.gov.sg/'>data.gov.sg</a>
+              <h3>Code</h3>
+              - <a href='https://github.com/hauchongtang/rainorshine'>GitHub</a>
+            </CardBody>
+          </Card>
+        </div>
+      </>
+    )
+  } catch (error) {
+    console.log("api error");
+  } finally {
+    return (
+      <>
+        <Card>Something went wrong, please try again later !</Card>
+      </>
+    )
+  }
+
 }
 
 export default Maps;
