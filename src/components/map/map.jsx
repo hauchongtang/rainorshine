@@ -382,14 +382,7 @@ const Maps = () => {
     )
   } catch (error) {
     console.log("api error");
-  } finally {
-    return (
-      <>
-        <Card>Something went wrong, please try again later !</Card>
-      </>
-    )
   }
-
 }
 
 export default Maps;
